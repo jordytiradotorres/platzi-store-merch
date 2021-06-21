@@ -1,9 +1,15 @@
 .Payment {
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 2rem;
   grid-row-gap: 1.5em;
   display: grid;
 }
+@media (min-width: 768px) {
+  .Payment {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
 .Payment-back {
   margin: 10px 0 0 0;
 }
@@ -31,4 +37,8 @@
 }
 .Payment-element h4 {
   margin: 0;
+}
+
+.Payment-button {
+  margin-top: 2rem;
 }

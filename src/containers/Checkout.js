@@ -35,13 +35,13 @@ const Checkout = () => {
               <div className="Checkout-itement">
                 <h4>{item.title}</h4>
                 <span>${item.price}</span>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveFromCart(item, index)}
+                >
+                  <FaTrashAlt />
+                </button>
               </div>
-              <button
-                type="button"
-                onClick={() => handleRemoveFromCart(item, index)}
-              >
-                <FaTrashAlt />
-              </button>
             </div>
           ))}
         </div>

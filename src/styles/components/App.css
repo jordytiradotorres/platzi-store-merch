@@ -11,11 +11,7 @@
 }
 
 body {
+  background-color: #eee;
   margin: 0;
   overflow-x: hidden;
-}
-
-h1 {
-  font-size: 40px;
-  color: brown;
 }

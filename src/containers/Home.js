@@ -7,6 +7,12 @@ const Home = () => (
   <>
     <Helmet>
       <title>Platzi Conf Merch - Productos</title>
+      <meta
+        name="description"
+        content="Platzi Conf Store es una tienda online con pagos en paypal"
+      />
+      <meta name="keywords" content="E-commerce,Html,Css,Javascript,React" />
+      <meta name="author" content="Jordy Tirado Torres" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@jordytirado20" />
       <meta name="twitter:creator" content="@jordytirado20" />

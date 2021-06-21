@@ -32,6 +32,14 @@ const Information = () => {
     history.push('/checkout/payment');
   };
 
+  const handleSumTotal = () => {
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price;
+    let sum = cart.reduce(reducer, 0);
+
+    return sum;
+  };
+
   return (
     <>
       <Helmet>
@@ -84,6 +92,9 @@ const Information = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div style={{ margin: '10px 0 0 0' }}>
+          <h3>Total: $ {handleSumTotal()}</h3>
         </div>
       </div>
     </>

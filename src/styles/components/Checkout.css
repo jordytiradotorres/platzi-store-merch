@@ -1,16 +1,28 @@
 .Checkout {
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 2rem;
   grid-row-gap: 1.5em;
   display: grid;
   padding: 0 0 4em 0;
 }
-.Checkout-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0 0 0;
+@media (min-width: 768px) {
+  .Checkout {
+    grid-template-columns: 3fr 1fr;
+  }
 }
+
+.Checkout-item {
+  margin: 0 0 10px 0;
+}
+
+.Checkout-itement {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.Checkout-itement h4 {
+  margin: 0;
+}
+
 .Checkout-item .fas {
   margin: 0 0 0 10px;
   color: rgba(0, 0, 0, 0.4);

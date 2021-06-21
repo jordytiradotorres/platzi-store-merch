@@ -2,6 +2,14 @@
   display: flex;
   justify-content: space-between;
 }
+.Header-title {
+  font-size: 35px;
+}
+@media (min-width: 376px) {
+  .Header-title {
+    font-size: 40px;
+  }
+}
 .Header-checkout {
   display: flex;
   justify-content: space-evenly;

@@ -72,7 +72,9 @@ const Payment = () => {
           </div>
         </div>
 
-        <div />
+        <div style={{ justifySelf: 'end' }}>
+          <h3>Total: $ {handleSumTotal()}</h3>
+        </div>
       </div>
     </>
   );
