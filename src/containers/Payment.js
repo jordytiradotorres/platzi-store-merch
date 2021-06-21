@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import { useHistory } from 'react-router-dom';
 import { PayPalButton } from 'react-paypal-button';
 import '../styles/components/Payment.css';
@@ -43,32 +44,37 @@ const Payment = () => {
   };
 
   return (
-    <div className="Payment">
-      <div className="Payment-content">
-        <h3>Resumen del pedido:</h3>
-        {cart.map((item, index) => (
-          <div className="Payment-item" key={index}>
-            <div className="Payment-element">
-              <h4>{item.title}</h4>
-              <span>$ {item.price}</span>
+    <>
+      <Helmet>
+        <title>Paga tu pedido- Platzi Conf Merch</title>
+      </Helmet>
+      <div className="Payment">
+        <div className="Payment-content">
+          <h3>Resumen del pedido:</h3>
+          {cart.map((item, index) => (
+            <div className="Payment-item" key={index}>
+              <div className="Payment-element">
+                <h4>{item.title}</h4>
+                <span>$ {item.price}</span>
+              </div>
             </div>
+          ))}
+          <div className="Payment-button">
+            <PayPalButton
+              paypalOptions={paypalOptions}
+              buttonStyles={buttonStyles}
+              amount={handleSumTotal()}
+              onPaymentStart={() => console.log('start payment')}
+              onPaymentSuccess={(data) => handlePaymentSuccess(data)}
+              onPaymentError={(error) => console.log(error)}
+              onPaymentCancel={(data) => console.log(data)}
+            />
           </div>
-        ))}
-        <div className="Payment-button">
-          <PayPalButton
-            paypalOptions={paypalOptions}
-            buttonStyles={buttonStyles}
-            amount={handleSumTotal()}
-            onPaymentStart={() => console.log('start payment')}
-            onPaymentSuccess={(data) => handlePaymentSuccess(data)}
-            onPaymentError={(error) => console.log(error)}
-            onPaymentCancel={(data) => console.log(data)}
-          />
         </div>
-      </div>
 
-      <div />
-    </div>
+        <div />
+      </div>
+    </>
   );
 };
 
